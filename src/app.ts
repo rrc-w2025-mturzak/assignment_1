@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     res.send("Hello, World");
 });
 
-app.get("/health", (req, res) => {
+app.get("/src/api/v1/routes", (req, res) => {
     const healthData: HealthCheckResponse = {
         status: "OK",
         uptime: process.uptime(),
