@@ -1,34 +1,39 @@
 {
-  "name": "evergreen_august_assignment_1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rrc-w2025-mturzak/assignment_1.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rrc-w2025-mturzak/assignment_1/issues"
-  },
-  "homepage": "https://github.com/rrc-w2025-mturzak/assignment_1#readme",
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^25.0.10",
-    "@types/supertest": "^6.0.3",
-    "jest": "^30.2.0",
-    "supertest": "^7.2.2",
-    "ts-jest": "^29.4.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+    "name": "debug-demo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "start": "ts-node src/server.ts",
+        "build": "tsc"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "express": "^5.1.0"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.2",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.19.7",
+        "jest": "^30.0.0",
+        "ts-jest": "^29.2.5",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    },
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rrc-w2025-mturzak/Test_tools.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rrc-w2025-mturzak/Test_tools/issues"
+    },
+    "homepage": "https://github.com/rrc-w2025-mturzak/Test_tools#readme"
 }
