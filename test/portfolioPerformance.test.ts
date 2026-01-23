@@ -15,7 +15,7 @@ describe("GET /api/v1/portfolio/performance", () => {
 });
 
 describe("calculatePortfolioPerformance", () => {
-    it("should return excellent Performance!", () => {
+    it("it should return excellent Performance!", () => {
         // Arrange
         const portfolio: Portfolio = {
             initialInvestment: 1000,
@@ -36,7 +36,7 @@ describe("calculatePortfolioPerformance", () => {
 });
 
 describe("calculatePortfolioPerformance", () => {
-    it("should return modest gain.", () => {
+    it("it should return modest gain.", () => {
         // Arrange
         const portfolio: Portfolio = {
             initialInvestment: 1000,
@@ -57,7 +57,7 @@ describe("calculatePortfolioPerformance", () => {
 });
 
 describe("calculatePortfolioPerformance", () => {
-    it("should return no change", () => {
+    it("it should return no change", () => {
         // Arrange
         const portfolio: Portfolio = {
             initialInvestment: 1000,
@@ -78,7 +78,7 @@ describe("calculatePortfolioPerformance", () => {
 });
 
 describe("calculatePortfolioPerformance", () => {
-    it("should return signifigant loss.", () => {
+    it("it should return signifigant loss.", () => {
         // Arrange
         const portfolio: Portfolio = {
             initialInvestment: 1000,
