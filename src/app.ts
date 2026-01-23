@@ -1,6 +1,8 @@
 import express, {Express} from "express";
 
-import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
+// import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
+
+import { Portfolio } from "./portfolio/portfolioPerformance";
 
 const app: Express = express();
 
@@ -22,13 +24,16 @@ app.get("/api/v1/health", (req, res) => {
     res.json(healthData);
 });
 
-app.get('/api/v1/portfolio/performance', (req, res) => {
-  const performance = calculatePortfolioPerformance();
 
-  res.json({
-    success: true,
-    performance
-  });
+app.get("/api/v1/portfolio/performance", (req, res) => {
+    const healthData: Portfolio = {
+        initialInvestment: 1000,
+        currentValue: 1000,
+        profitOrLoss: 1000,
+        percentageChange: 1000,
+        performanceSummary: "hi",
+    };
+    res.json(healthData);
 });
 
 export default app;
