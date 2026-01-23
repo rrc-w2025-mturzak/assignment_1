@@ -15,7 +15,7 @@ describe("GET /api/v1/portfolio/performance", () => {
 });
 
 describe("calculatePortfolioPerformance", () => {
-    it("should return Excellent Performance!", () => {
+    it("should return excellent Performance!", () => {
         // Arrange
         const portfolio: Portfolio = {
             initialInvestment: 1000,
@@ -74,6 +74,27 @@ describe("calculatePortfolioPerformance", () => {
         expect(result).not.toBeNull();
         expect(result?.performanceSummary).toBe("No Change. Your portfolio is holding steady.");
         expect(result?.percentageChange).toBe(0);
+    });
+});
+
+describe("calculatePortfolioPerformance", () => {
+    it("should return signifigant loss.", () => {
+        // Arrange
+        const portfolio: Portfolio = {
+            initialInvestment: 1000,
+            currentValue: 1,
+            profitOrLoss: 0,
+            percentageChange: 0,
+            performanceSummary: ""
+        }
+
+        // Act
+        const result = calculatePortfolioPerformance(portfolio);
+
+        // Assert
+        expect(result).not.toBeNull();
+        expect(result?.performanceSummary).toBe("Signifigant loss. Review your portfolio strategy.");
+        expect(result?.percentageChange).toBe(-99.9);
     });
 });
 
