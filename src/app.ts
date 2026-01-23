@@ -1,6 +1,6 @@
 import express, {Express} from "express";
 
-// import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
+import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
 
 import { Portfolio } from "./portfolio/portfolioPerformance";
 
@@ -24,18 +24,6 @@ app.get("/api/v1/health", (req, res) => {
     res.json(healthData);
 });
 
-
-// app.get("/api/v1/portfolio/performance", (req, res) => {
-//     const healthData: Portfolio = {
-//         initialInvestment: req.query,
-//         currentValue: 1000,
-//         profitOrLoss: 1000,
-//         percentageChange: 1000,
-//         performanceSummary: "hi",
-//     };
-//     res.json(healthData);
-// });
-
 app.get("/api/v1/portfolio/performance", (req, res) => {
 
     const initialInvestment = Number(req.query.initialInvestment);
@@ -53,15 +41,23 @@ app.get("/api/v1/portfolio/performance", (req, res) => {
         });
     }
 
-    const healthData: Portfolio = {
+    const result = calculatePortfolioPerformance({
         initialInvestment,
         currentValue,
-        profitOrLoss: 1000 - initialInvestment,
-        percentageChange: ((1000 - initialInvestment) / initialInvestment) * 100,
-        performanceSummary: "hi",
+        profitOrLoss: 0,
+        percentageChange: 0,
+        performanceSummary: "",
+    });
+
+    const portfolioData: Portfolio = {
+        initialInvestment,
+        currentValue,
+        profitOrLoss: result.profitOrLoss,
+        percentageChange: result.percentageChange,
+        performanceSummary: result.performanceSummary,
     };
 
-    res.json(healthData);
+    res.json(portfolioData);
 });
 
 
