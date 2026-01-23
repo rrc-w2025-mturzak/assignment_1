@@ -38,6 +38,9 @@ export function calculatePortfolioPerformance(portfolio: Portfolio): any {
         case percentageChange < -10:
             performanceSummary = "Signifigant loss. Review your portfolio strategy."
             break
+        
+        default: 
+            performanceSummary = "No performance data available.";
     }
 
     return {
