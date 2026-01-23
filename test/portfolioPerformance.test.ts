@@ -15,6 +15,27 @@ describe("GET /api/v1/portfolio/performance", () => {
 });
 
 describe("calculatePortfolioPerformance", () => {
+    it("Excellent Performance!", () => {
+        // Arrange
+        const portfolio: Portfolio = {
+            initialInvestment: 1000,
+            currentValue: 10000,
+            profitOrLoss: 0,
+            percentageChange: 0,
+            performanceSummary: ""
+        }
+
+        // Act
+        const result = calculatePortfolioPerformance(portfolio);
+
+        // Assert
+        expect(result).not.toBeNull();
+        expect(result?.performanceSummary).toBe("Excellent Performance! Your investments are doing great.");
+        expect(result?.percentageChange).toBe(900);
+    });
+});
+
+describe("calculatePortfolioPerformance", () => {
     it("should return no change", () => {
         // Arrange
         const portfolio: Portfolio = {
