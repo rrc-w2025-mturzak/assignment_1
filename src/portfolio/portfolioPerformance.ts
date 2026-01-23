@@ -6,9 +6,9 @@ export interface Portfolio {
     performanceSummary: string;
 }
 
-export function calculatePortfolioPerformance(): Portfolio {
-    let initialInvestment = 10000;
-    let currentValue = 12000;
+export function calculatePortfolioPerformance(portfolio: Portfolio): any {
+    let initialInvestment = portfolio.initialInvestment;
+    let currentValue = portfolio.currentValue;
 
     const profitOrLoss = currentValue - initialInvestment;
 
