@@ -1,5 +1,7 @@
 import express, {Express} from "express";
 
+import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
+
 const app: Express = express();
 
 interface HealthCheckResponse {
@@ -8,11 +10,6 @@ interface HealthCheckResponse {
     timestamp: string;
     version: string;
 }
-
-app.get("/", (req, res) => {
-    res.statusCode = 500;
-    res.send("Hello, World");
-});
 
 app.get("/api/v1/health", (req, res) => {
     const healthData: HealthCheckResponse = {
@@ -23,6 +20,15 @@ app.get("/api/v1/health", (req, res) => {
     };
 
     res.json(healthData);
+});
+
+app.get('/api/v1/portfolio/performance', (req, res) => {
+  const performance = calculatePortfolioPerformance();
+
+  res.json({
+    success: true,
+    performance
+  });
 });
 
 export default app;
