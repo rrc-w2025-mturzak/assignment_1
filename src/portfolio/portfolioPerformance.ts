@@ -24,7 +24,7 @@ export function calculatePortfolioPerformance(portfolio: Portfolio): any {
             break
 
         case percentageChange > 0:
-            performanceSummary = "Modest gain. Your portfolio is growing slowly"
+            performanceSummary = "Modest gain. Your portfolio is growing slowly."
             break
 
         case percentageChange == 0:
